@@ -1,0 +1,9 @@
+<ListOfTask>
+  <Task file="" description="Finish the turn functionality" priority="High" completed="True" />
+  <Task file="" description="Add the shuffling algorithm" />
+  <Task file="" description="Add the solving algorithm" />
+  <Task file="" description="Add stuff to the gui (timer, high score, help)" />
+  <Task file="" description="Sound Effects?" />
+  <Task file="" description="Title Screen?" />
+  <Task file="" description="Add quick snap to view function" />
+</ListOfTask>
