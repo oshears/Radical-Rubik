@@ -8,15 +8,25 @@ lighting and objects). The player may shuffle the Rubik’s Cube by simply press
 keyboard, and may access the in-game settings menu where they can alter the game’s audio or 
 graphical configurations. 
 
+
 Features: 
+
  -Custom Designed Title Screen 
+
  -Completely Interactive and Virtual 3D Rubik’s Cube 
+
  -In-Game Objects and Player Representation (For the purpose of Immersion) 
+
  -Hold-and-Click Control System 
+
  -Action-Based Sound Effects 
+
  -Thought Provoking Music Selections 
+
  -In-Game Pause and Settings Menu
+
  -Heads Up Display
+
 
 Controls: 
 Click and drag anywhere on the screen to rotate the cube. Click on any panel (not including the middle 
