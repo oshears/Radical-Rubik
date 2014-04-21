@@ -2,7 +2,9 @@ Radical Rubik
 ============
 By Osaze Shears 
 
-Project Goal: The goal of this game/ simulation application is to provide users with an interactive and 
+Project Goal: 
+============
+The goal of this game/simulation application is to provide users with an interactive and 
 virtual alternative to solving, or simply toying with, a Rubik’s Cube. The application demonstrates a 
 comprehensive hold-and-click control system and intuitive perspective based effects (i.e. shadows, 
 lighting and objects). The player may shuffle the Rubik’s Cube by simply pressing the “K” button on the 
