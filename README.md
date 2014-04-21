@@ -1,4 +1,5 @@
 Radical Rubik 
+============
 By Osaze Shears 
 
 Project Goal: The goal of this game/ simulation application is to provide users with an interactive and 
@@ -10,25 +11,19 @@ graphical configurations.
 
 
 Features: 
-
- -Custom Designed Title Screen 
-
- -Completely Interactive and Virtual 3D Rubik’s Cube 
-
- -In-Game Objects and Player Representation (For the purpose of Immersion) 
-
- -Hold-and-Click Control System 
-
- -Action-Based Sound Effects 
-
- -Thought Provoking Music Selections 
-
- -In-Game Pause and Settings Menu
-
- -Heads Up Display
+============
+ * Custom Designed Title Screen 
+ * Completely Interactive and Virtual 3D Rubik’s Cube 
+ * In-Game Objects and Player Representation (For the purpose of Immersion) 
+ * Hold-and-Click Control System 
+ * Action-Based Sound Effects 
+ * Thought Provoking Music Selections 
+ * In-Game Pause and Settings Menu
+ * Heads Up Display
 
 
 Controls: 
+============
 Click and drag anywhere on the screen to rotate the cube. Click on any panel (not including the middle 
 and center panels on each side) while holding either “W”, “A”, “S”, or “D” in order to turn the face of the 
 cube in its respective direction. Press “K” to shuffle the cube precisely five times. Press “esc” to bring up 
