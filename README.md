@@ -21,4 +21,4 @@ Features:
 
 Controls: 
 ============
-Click and drag anywhere on the screen to rotate the cube. Click on any panel (not including the middle and center panels on each side) while holding either “W”, “A”, “S”, or “D” in order to turn the face of the cube in its respective direction. Press any number on the keyboard (from 1-9) in order to shuffle the cube that number of times. Press 0 on the keyboard to reset the cube. Press “esc” to bring up or dismiss the in-game pause menu. 
+Click and drag anywhere on the screen to rotate the cube. Click on any panel (not including the middle and center panels on each side) while holding either “W”, “A”, “S”, or “D” in order to turn the face of the cube in its respective direction. Press any number on the keyboard (from 1-9) to shuffle the cube that number of times. Press 0 on the keyboard to reset the cube. Press “esc” to bring up or dismiss the in-game pause menu. 
