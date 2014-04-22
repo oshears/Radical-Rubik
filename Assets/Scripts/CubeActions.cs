@@ -123,6 +123,7 @@ public class CubeActions : MonoBehaviour {
 	public GameObject[,,] actualfaces = new GameObject[6,3,3];
 	public GameObject[,,] perfaces = new GameObject[6, 3, 3];
 	public Material[,,] dynamic_materials = new Material[6, 3, 3];
+	public Material[,,] original_dynamic_materials = new Material[6, 3, 3];
 
 	// Use this for initialization
 	void Start () {
@@ -130,12 +131,31 @@ public class CubeActions : MonoBehaviour {
 		for(int a = 0; a < 6; a++){
 			for(int b = 0; b < 3; b++){
 				for(int c = 0; c < 3; c++){
-					if (a==0)dynamic_materials[a,b,c] = mat_orange;
-					if (a==1)dynamic_materials[a,b,c] = mat_red;
-					if (a==2)dynamic_materials[a,b,c] = mat_blue;
-					if (a==3)dynamic_materials[a,b,c] = mat_yellow;
-					if (a==4)dynamic_materials[a,b,c] = mat_white;
-					if (a==5)dynamic_materials[a,b,c] = mat_green;
+					if (a==0){
+						dynamic_materials[a,b,c] = mat_orange;
+						original_dynamic_materials[a,b,c]=mat_orange;
+					}
+					if (a==1){
+						dynamic_materials[a,b,c] = mat_red;
+						original_dynamic_materials[a,b,c] = mat_red;
+					}
+					if (a==2){
+						dynamic_materials[a,b,c] = mat_blue;
+						original_dynamic_materials[a,b,c] = mat_blue;
+					}
+					if (a==3){
+						dynamic_materials[a,b,c] = mat_yellow;
+						original_dynamic_materials[a,b,c] = mat_yellow;
+					}
+					if (a==4){
+						dynamic_materials[a,b,c] = mat_white;
+						original_dynamic_materials[a,b,c] = mat_white;
+
+					}
+					if (a==5){
+						dynamic_materials[a,b,c] = mat_green;
+						original_dynamic_materials[a,b,c] = mat_white;
+					}
 				}
 			}
 		}
@@ -255,7 +275,7 @@ public class CubeActions : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		Debug.Log("X: "+Camera.main.transform.position.x+" Y: "+Camera.main.transform.position.y+" Z: "+Camera.main.transform.position.z);
+		//Debug.Log("X: "+Camera.main.transform.position.x+" Y: "+Camera.main.transform.position.y+" Z: "+Camera.main.transform.position.z);
 
 		int camera_at = 0;
 
@@ -284,7 +304,7 @@ public class CubeActions : MonoBehaviour {
 			camera_at = 8;	
 		}
 
-		if (camera_at == 1) {
+		/*if (camera_at == 1) {
 			Debug.Log("The camera is in the top front area of the cube...");		
 		}
 		else if (camera_at == 2) {
@@ -310,7 +330,7 @@ public class CubeActions : MonoBehaviour {
 		}
 		else{
 			Debug.Log("The camera's position is between the top and bottom of the cube...");		
-		}
+		}*/
 						
 		if ( Input.GetMouseButtonDown(0)){
 
@@ -1055,13 +1075,60 @@ public class CubeActions : MonoBehaviour {
 				}
 			}
 		}
-		if (Input.GetKeyDown(KeyCode.K)){
-			Shuffle();
+		if (Input.GetKeyDown(KeyCode.Alpha0)){
+			Reset();
+			AudioSource[] shuffle_noise = Camera.main.GetComponents<AudioSource>();
+			shuffle_noise[1].Play();
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha1)){
+			Shuffle(1);
+			AudioSource[] shuffle_noise = Camera.main.GetComponents<AudioSource>();
+			shuffle_noise[1].Play();
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha2)){
+			Shuffle(2);
+			AudioSource[] shuffle_noise = Camera.main.GetComponents<AudioSource>();
+			shuffle_noise[1].Play();
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha3)){
+			Shuffle(3);
+			AudioSource[] shuffle_noise = Camera.main.GetComponents<AudioSource>();
+			shuffle_noise[1].Play();
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha4)){
+			Shuffle(4);
+			AudioSource[] shuffle_noise = Camera.main.GetComponents<AudioSource>();
+			shuffle_noise[1].Play();
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha5)){
+			Shuffle(5);
+			AudioSource[] shuffle_noise = Camera.main.GetComponents<AudioSource>();
+			shuffle_noise[1].Play();
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha6)){
+			Shuffle(6);
+			AudioSource[] shuffle_noise = Camera.main.GetComponents<AudioSource>();
+			shuffle_noise[1].Play();
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha7)){
+			Shuffle(7);
+			AudioSource[] shuffle_noise = Camera.main.GetComponents<AudioSource>();
+			shuffle_noise[1].Play();
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha8)){
+			Shuffle(8);
+			AudioSource[] shuffle_noise = Camera.main.GetComponents<AudioSource>();
+			shuffle_noise[1].Play();
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha9)){
+			Shuffle(9);
 			AudioSource[] shuffle_noise = Camera.main.GetComponents<AudioSource>();
 			shuffle_noise[1].Play();
 		}
 	}
-
+/*-------------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------------*/
 	void action (string action_code){
 		//36 Possible Movements//
 
@@ -2175,12 +2242,11 @@ public class CubeActions : MonoBehaviour {
 			}
 		}
 	}
-	void Shuffle (){
-
-		for (int a=0;a<5;a++){
-
+	void Shuffle (int sh){
+		Debug.Log("Entering shuffle with the input "+sh);
+		for (int a=0;a<sh;a++){
 			int roll = Random.Range(1,6);
-			
+			Debug.Log("The turn was "+a+" and the roll was "+roll);
 			if (roll==1){
 				action("f");
 				Debug.Log("f");
@@ -2205,6 +2271,49 @@ public class CubeActions : MonoBehaviour {
 				action("d");
 				Debug.Log("d");
 			}	
+		}
+	}
+
+	void Reset(){
+		for(int a = 0; a < 6; a++){
+			for(int b = 0; b < 3; b++){
+				for(int c = 0; c < 3; c++){
+					if (a==0&&(b*c!=1)){
+						dynamic_materials[a,b,c] = mat_orange;
+						original_dynamic_materials[a,b,c]=mat_orange;
+						actualfaces[a,b,c].renderer.material=mat_orange;
+						perfaces[a,b,c].renderer.material=mat_orange;
+					}
+					else if (a==1&&(b*c!=1)){
+						dynamic_materials[a,b,c] = mat_red;
+						original_dynamic_materials[a,b,c] = mat_red;
+						actualfaces[a,b,c].renderer.material=mat_red;
+						perfaces[a,b,c].renderer.material=mat_red;
+					}
+					else if (a==2&&(b*c!=1)){
+						dynamic_materials[a,b,c] = mat_blue;
+						original_dynamic_materials[a,b,c] = mat_blue;
+						actualfaces[a,b,c].renderer.material=mat_blue;
+						perfaces[a,b,c].renderer.material=mat_blue;
+					}
+					else if (a==3&&(b*c!=1)){
+						dynamic_materials[a,b,c] = mat_yellow;
+						original_dynamic_materials[a,b,c] = mat_yellow;
+						actualfaces[a,b,c].renderer.material=mat_yellow;
+						perfaces[a,b,c].renderer.material=mat_yellow;
+					}
+					else if (a==4&&(b*c!=1)){
+						dynamic_materials[a,b,c] = mat_white;
+						actualfaces[a,b,c].renderer.material=mat_white;
+						perfaces[a,b,c].renderer.material=mat_white;
+					}
+					else if (a==5&&(b*c!=1)){
+						dynamic_materials[a,b,c] = mat_green;
+						actualfaces[a,b,c].renderer.material=mat_green;
+						perfaces[a,b,c].renderer.material=mat_green;
+					}
+				}
+			}
 		}
 	}
 }
